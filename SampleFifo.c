@@ -13,7 +13,7 @@ int main (int argc, char * argv[])
 
         // Create FIFO + read
         mkfifo("/tmp/myfifo", 0666);
-        fd = open("/tmp/morpho-suspend-fifo", O_RDONLY);
+        fd = open("/tmp/suspend-fifo", O_RDONLY);
         printf("FIFO created\n");
         for(;;)
         {
@@ -25,7 +25,7 @@ int main (int argc, char * argv[])
 
         close(fd);
 
-        unlink("/tmp/morpho-suspend-fifo");
+        unlink("/tmp/suspend-fifo");
 
         return EXIT_SUCCESS;
 }
